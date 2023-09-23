@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid black;
+    margin: auto;
+  }
+
+  
+  
+  th, td {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }

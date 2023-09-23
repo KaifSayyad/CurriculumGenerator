@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/output.css' %}">
+    <title>myApp</title>
+</head>
+<body>
+    <div class="container mx-5 my-2">
+        <h2>Course Outcomes</h2>
+            <pre>{{courseOutcomes}}</pre>
+    </div>
+    <div class="container mx-5 my-2">
+        <h2>Course Objectives</h2>
+            <pre>{{courseObjectives}}</pre>
+    </div>
+    <div class="myTable" id="myTable">
+        <table>
+            <tr>
+                <th>Module No.</th>
+                <th>Module Content</th>
+                <th>Number Of Hours</th>
+            </tr>
+            {% for i in moduleCont %}
+                {% with index=forloop.counter0 %}
+                {% with ind=forloop.counter %}
+                <tr>
+                    <td>{{ind}}</td>
+                    <td>{{i}}</td>
+                    {% for j in moduleHrs %}
+                        {% if index == forloop.counter0 %}
+                        <td>{{j}}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endwith %}
+                {% endwith %}
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

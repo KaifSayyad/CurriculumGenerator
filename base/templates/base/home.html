@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/home.css' ?v=2%}">
+    <title>myApp</title>
+</head>
+<body>
+    <div class="container">
+        <form action="output" name="output" method="POST">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
